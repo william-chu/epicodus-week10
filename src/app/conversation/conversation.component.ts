@@ -16,12 +16,7 @@ export class ConversationComponent implements OnInit {
   constructor(private aimService: AimService) { }
 
   ngOnInit() {
-    // this.conversation = this.aimService.getMessages().subscribe(dataLastEmittedFromObserver => {
-    //   this.conversation = dataLastEmittedFromObserver;
-    //
-    //   console.log(this.conversation);
-    // });
-    // console.log(Object.getOwnPropertyNames(this.conversation));
+  
   }
 
 }

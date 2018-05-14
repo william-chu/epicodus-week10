@@ -19,10 +19,8 @@ export class ChatDisplayComponent implements OnInit {
 
   ngOnInit() {
     this.userId = this.route.params['_value']['id'];
-    console.log(this.userId);
-    this.conversation = this.aimService.getMessagesByUserId(this.userId).subscribe(dataLastEmittedFromObserver => {
+    this.aimService.getMessagesByUserId(this.userId).subscribe(dataLastEmittedFromObserver => {
       this.conversation = dataLastEmittedFromObserver;
-      console.log(this.conversation);
     });
 
   }

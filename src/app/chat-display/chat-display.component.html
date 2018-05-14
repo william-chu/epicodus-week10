@@ -1,2 +1,6 @@
 <app-conversation></app-conversation>
 <app-compose></app-compose>
+<div *ngFor="let chat of conversation">
+  <p>Conversation with {{chat.buddy}}</p>
+  <p>{{chat.messages}}</p>
+</div>
