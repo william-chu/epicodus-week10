@@ -26,7 +26,6 @@ export class ChatDisplayComponent implements OnInit {
     this.buddy = this.aimService.getBuddyByUserId(this.userId);
     this.aimService.getUserById(this.userId).subscribe(dataLastEmittedFromObserver => {
       this.user = dataLastEmittedFromObserver.$value;
-     console.log(this.user);
    })
   }
 
