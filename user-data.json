@@ -1,12 +1,10 @@
-{ "Users": [
+{ "users": [
   {
     "name": "xxKeWLGuRLxx",
-    "chatList": [{"buddy": "Will_I_Am", "messages": ["hi", "sup", "whatever", "lol"]},
-                 {"buddy": "SmarterChild", "messages": ["blah", "brb", "ok", "lol"]}]
+    "chatList": [{"buddy": "Will_I_Am", "messages": ["hi", "sup", "whatever", "lol"]}]
   },
   {
     "name": "Will_I_Am",
-    "chatList": [{"buddy": "xxKeWLGuRLxx", "messages": ["sup", "hi", "lol", "whatever"]},
-                 {"buddy": "SmarterChild", "messages": ["blah", "brb", "ok", "lol"]}]
+    "chatList": [{"buddy": "xxKeWLGuRLxx", "messages": ["sup", "hi", "lol", "whatever"]}]
   }]
 }

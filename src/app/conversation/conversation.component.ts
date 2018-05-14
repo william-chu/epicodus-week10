@@ -9,11 +9,13 @@ import { FirebaseListObservable } from 'angularfire2/database';
   providers: [AimService]
 })
 export class ConversationComponent implements OnInit {
+  conversation: FirebaseListObservable<any[]>;
 
   constructor(private aimService: AimService
 ) { }
 
   ngOnInit() {
+    // this.conversation = this.aimService.getMessages();
   }
 
 }
