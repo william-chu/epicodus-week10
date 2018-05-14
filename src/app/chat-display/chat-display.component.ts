@@ -19,10 +19,17 @@ export class ChatDisplayComponent implements OnInit {
 
   ngOnInit() {
     this.userId = this.route.params['_value']['id'];
-    this.aimService.getMessagesByUserId(this.userId).subscribe(dataLastEmittedFromObserver => {
+    this.aimService.getMessagesByUserId(this.userId).subscribe(
+      dataLastEmittedFromObserver => {
       this.conversation = dataLastEmittedFromObserver;
-    });
+    }
+      // this.conversation = data.json();
+      // this.conversation = Array.of(this.conversation);
+  );
+  }
 
+  sendMessage(newMessage) {
+    this.aimService.appendMessage(`${this.userId.name}: ${newMessage}`, this.userId);
   }
 
 }

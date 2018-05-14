@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
 
 import { routing } from './app.routing';
 import { AppComponent } from './app.component';
@@ -33,7 +35,10 @@ export const firebaseConfig = {
     BrowserModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
-    routing
+    routing,
+    FormsModule,
+    HttpModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

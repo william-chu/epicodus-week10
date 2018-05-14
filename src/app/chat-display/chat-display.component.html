@@ -1,6 +1,13 @@
-<app-conversation></app-conversation>
-<app-compose></app-compose>
+<!-- <app-conversation></app-conversation>
+<app-compose></app-compose> -->
 <div *ngFor="let chat of conversation">
   <p>Conversation with {{chat.buddy}}</p>
-  <p>{{chat.messages}}</p>
+  <div *ngFor="let message of chat.messages">
+    <p>{{message}}</p>
+  </div>
+</div>
+
+<div>
+  <input #newMessage type="text" placeholder="Enter Text">
+  <button (click)="sendMessage(newMessage.value)">Send</button>
 </div>

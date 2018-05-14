@@ -13,4 +13,8 @@ export class AimService {
     return this.database.list(`users/${userId}/chatList`);
   }
 
+  appendMessage(newMessage: string, userId: string) {
+    this.database.list(`users/${userId}/chatList/0/messages`).push(newMessage);
+  }
+
 }
