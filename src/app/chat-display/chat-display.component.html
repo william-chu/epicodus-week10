@@ -1,10 +1,11 @@
 <div>
-  <p>Conversation with {{(name | async)?.$value}}</p>
+  <p>Conversation with {{(buddy | async)?.$value}}</p>
   <div *ngFor="let message of messages | async">
     <p>{{message.$value | json}}</p>
   </div>
 </div>
 <div>
-  <input #newMessage type="text" placeholder="Enter Text">
+  <!-- {{(user | async)?.$value}}  -->
+  <input #newMessage type="text" placeholder="Enter a message">
   <button (click)="sendMessage(newMessage.value)">Send</button>
 </div>

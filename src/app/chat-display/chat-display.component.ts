@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { AimService } from '../aim.service';
 import { ActivatedRoute, Params } from '@angular/router';
-import { FirebaseListObservable } from 'angularfire2/database';
+import { FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 
 
 @Component({
@@ -15,19 +15,23 @@ import { FirebaseListObservable } from 'angularfire2/database';
 export class ChatDisplayComponent implements OnInit {
   userId: string;
   messages: FirebaseListObservable<any[]>;
-  name;
+  buddy;
+  user;
 
   constructor(private router: Router, private route: ActivatedRoute, private location: Location, private aimService: AimService) { }
 
   ngOnInit() {
     this.userId = this.route.params['_value']['id'];
     this.messages = this.aimService.getMessagesByUserId(this.userId);
-    this.name = this.aimService.getBuddyByUserId(this.userId);
-    console.log(this.name);
+    this.buddy = this.aimService.getBuddyByUserId(this.userId);
+    this.aimService.getUserById(this.userId).subscribe(dataLastEmittedFromObserver => {
+      this.user = dataLastEmittedFromObserver.$value;
+     console.log(this.user);
+   })
   }
 
   sendMessage(newMessage) {
-    this.aimService.appendMessage(`${this.name}: ${newMessage}`, this.userId);
+    this.aimService.appendMessage(`${this.user}: ${newMessage}`, this.userId);
   }
 
 }
