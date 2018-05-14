@@ -9,7 +9,7 @@ const appRoutes: Routes = [
 	   component: WelcomeComponent
 	},
   {
-	   path: 'chat-display',
+	   path: 'chat-display/:id',
 	   component: ChatDisplayComponent
 	}
 ];

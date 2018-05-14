@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AimService } from '../aim.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-welcome',
@@ -8,15 +10,15 @@ import { AimService } from '../aim.service';
   providers: [AimService]
 })
 export class WelcomeComponent implements OnInit {
-
-  constructor(private aimService: AimService) { }
+  currentRoute: string = this.router.url;
+  constructor(private aimService: AimService, private router: Router) { }
 
   ngOnInit() {
   }
 
   setUser(username: string) {
-    //send the usernmae to the service to set it for everything
-    //route to the appropriate buddylist
+    this.aimService.setUser(username);
+    this.router.navigate(['chat-display', username]);
   }
 
 }

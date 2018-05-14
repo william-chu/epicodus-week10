@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AimService } from '../aim.service';
 import { FirebaseListObservable } from 'angularfire2/database';
 
+
 @Component({
   selector: 'app-conversation',
   templateUrl: './conversation.component.html',
@@ -9,13 +10,18 @@ import { FirebaseListObservable } from 'angularfire2/database';
   providers: [AimService]
 })
 export class ConversationComponent implements OnInit {
-  conversation: FirebaseListObservable<any[]>;
+  conversation;
 
-  constructor(private aimService: AimService
-) { }
+
+  constructor(private aimService: AimService) { }
 
   ngOnInit() {
-    // this.conversation = this.aimService.getMessages();
+    this.conversation = this.aimService.getMessages().subscribe(dataLastEmittedFromObserver => {
+      this.conversation = dataLastEmittedFromObserver;
+
+      console.log(this.conversation);
+    });
+    // console.log(Object.getOwnPropertyNames(this.conversation));
   }
 
 }
