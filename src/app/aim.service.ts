@@ -47,7 +47,6 @@ export class AimService {
     return chatList;
   }
 
-
   appendBuddyChatList(newMessage: string, buddyId: string) {
     this.database.list(`users/${buddyId}/chatList/0/messages`).push(newMessage);
   }

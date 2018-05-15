@@ -16,7 +16,6 @@ export class ChatDisplayComponent implements OnInit {
   @Input() userId: string;
   messages: FirebaseListObservable<any[]>;
   currentRoute: string = this.router.url;
-  // userId: string;
   // user;
   buddyId: string;
   // buddy;
