@@ -8,3 +8,6 @@
   <input #newMessage type="text" placeholder="Enter a message">
   <button (click)="sendMessage(newMessage.value)">Send</button>
 </div>
+
+
+<p>{{messages | json}}</p>

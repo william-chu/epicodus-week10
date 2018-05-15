@@ -8,14 +8,24 @@ export class AimService {
   buddy: FirebaseObjectObservable<any>;
   user: FirebaseObjectObservable<any>;
   buddyId;
+  chatList: FirebaseListObservable<any[]>;
 
   constructor(private database: AngularFireDatabase){
 
   }
 
-  getMessagesByUserId(userId: string) {
-    this.messages = this.database.list(`users/${userId}/chatList/0/messages`);
-    return this.messages;
+  getMessagesByUserId(chatUserId: string, chatBuddyId: string) {
+    this.chatList = this.database.list(`users/${chatUserId}/chatList/`,
+      {
+      query: {
+        orderByChild: 'buddyId'
+        // equalTo: chatBuddyId
+      }
+    }
+    );
+    // let messages = chatList.orderByChild("buddyId").equalTo(buddyId);
+    console.log(this.chatList);
+    return this.chatList;
   }
 
   getBuddyByUserId(userId: string) {

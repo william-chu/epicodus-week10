@@ -18,12 +18,12 @@ export class BuddyListComponent implements OnInit {
   constructor(private aimService: AimService, private route: ActivatedRoute, private location: Location, private router: Router) { }
 
   ngOnInit() {
-    this.userId = this.route.params['_value']['id'];
+    this.userId = this.route.params['_value']['userId'];
     this.chatList = this.aimService.getBuddiesByUserId(this.userId);
   }
 
   chatWithBuddy(buddyId: string) {
-    window.open(`http://localhost:4200/buddy-list/${this.userId}`, "_blank");
+    window.open(`http://localhost:4200/chat-display/${this.userId}/${buddyId}`, "_blank");
   }
 
 
