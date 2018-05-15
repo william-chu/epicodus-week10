@@ -16,13 +16,13 @@ export class AimService {
 
   }
 
-  getMessagesByUserId(chatUserId: string, chatBuddyId: string) {
-    this.chatList = this.database.list(`users/${chatUserId}/chatList/${chatBuddyId}/messages`);
+  getMessagesByUserId(chatUserId: string, buddyKey: string) {
+    this.chatList = this.database.list(`users/${chatUserId}/chatList/${buddyKey}/messages`);
     return this.chatList;
   }
 
-  getBuddyByUserId(userId: string) {
-    this.buddy = this.database.object(`users/${userId}/chatList/0/buddy`);
+  getBuddyByUserId(userId: string, buddyKey: string) {
+    this.buddy = this.database.object(`users/${userId}/chatList/${buddyKey}/buddy`);
     return this.buddy;
   }
 
@@ -31,24 +31,23 @@ export class AimService {
     return this.user;
   }
 
-  getBuddyId(userId: string) {
-    this.buddyId = this.database.object(`users/${userId}/chatList/0/buddyId`);
+  getBuddyId(userId: string, buddyKey: string) {
+    this.buddyId =  this.database.object(`users/${userId}/chatList/${buddyKey}/buddyId`);
     return this.buddyId;
   }
 
-  appendUserChatList(newMessage: string, userId: string) {
-    this.database.list(`users/${userId}/chatList/0/messages`).push(newMessage);
+  appendUserChatList(newMessage: string, userId: string, buddyKey: string) {
+    this.database.list(`users/${userId}/chatList/${buddyKey}/messages`).push(newMessage);
   }
 
+  appendBuddyChatList(newMessage: string, buddyId: string) {
+    this.database.list(`users/${buddyId}/chatList/0/messages`).push(newMessage);
+  }
 
   //this is for the buddylist to get all the buddies
   getBuddiesByUserId(userId: string) {
     let chatList = this.database.list(`users/${userId}/chatList/`);
     return chatList;
-  }
-
-  appendBuddyChatList(newMessage: string, buddyId: string) {
-    this.database.list(`users/${buddyId}/chatList/0/messages`).push(newMessage);
   }
 
 }

@@ -14,7 +14,7 @@ const appRoutes: Routes = [
 	   component: BuddyListComponent
 	},
   {
-    path: 'chat-display/:userId/:buddyId',
+    path: 'chat-display/:userId/:buddyKey',
     component: ChatDisplayComponent
   }
 
