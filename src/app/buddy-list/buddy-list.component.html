@@ -5,7 +5,7 @@
     </div>
     <div class="col-2 buddy-list">
       <div *ngFor="let chat of chatList | async">
-        <button (click)="chatWithBuddy(chat.buddyId)">{{chat.buddy | json}}</button>
+        <button (click)="chatWithBuddy(chat.$key)">{{chat.buddy | json}}</button>
       </div>
     </div>
   </div>
