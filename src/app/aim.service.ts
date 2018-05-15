@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { UserData } from './models/user-data.model';
+var firebase = require('firebase');
 
 @Injectable()
 export class AimService {
@@ -42,7 +43,6 @@ export class AimService {
 
   getUserKey(userId: string, buddyId: string) {
     let userKey;
-    var firebase = require('firebase');
     var ref = firebase.database().ref(`users/${buddyId}/chatList/`).orderByChild("buddyId").equalTo(userId).on('value', function (snapshot) {
       userKey = Object.keys(snapshot.val())[0];
     });
