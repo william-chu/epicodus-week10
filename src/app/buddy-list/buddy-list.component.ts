@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { AimService } from '../aim.service';
 import { FirebaseListObservable } from 'angularfire2/database';
 
@@ -9,10 +9,12 @@ import { FirebaseListObservable } from 'angularfire2/database';
   providers: [AimService]
 })
 export class BuddyListComponent implements OnInit {
-
+  @Input() childUserId: string;
+  chatList;
   constructor(private aimService: AimService) { }
 
   ngOnInit() {
+    this.chatList = this.aimService.getBuddiesByUserId(this.childUserId);
   }
 
 }

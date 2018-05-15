@@ -1,0 +1,8 @@
+app-buddy-list {
+  height: 600px;
+  width: 200px;
+  border: 1px solid black;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}

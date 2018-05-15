@@ -1,3 +1,3 @@
 export class Chat {
-  constructor (public buddy: string, public messages: string[]) { }
+  constructor (public buddy: string, public buddyId: string, public messages: string[]) { }
 }

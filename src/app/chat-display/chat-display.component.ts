@@ -12,6 +12,7 @@ import { FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/d
   styleUrls: ['./chat-display.component.css'],
   providers: [AimService]
 })
+
 export class ChatDisplayComponent implements OnInit {
   userId: string;
   messages: FirebaseListObservable<any[]>;
