@@ -17,7 +17,7 @@ Angular Instant Messenger (AIM) - A 21st century chat application with a 90s fee
 
 | Reasonable Goals | Input | Output | Status |
 | --- | --- | --- | --- |
-| User can chat with multiple buddies | Select additional buddy on buddylist | Multiple chat windows | In Progress |
+| User can chat with multiple buddies | Select additional buddy on buddylist | Multiple chat windows | Done |
 | User can see their username and buddy username in respective colors next to each message | Chat message sent | Username is in appropriate color | In Progress |
 | User can authenticate to system | Username and password | Login success | In Progress |
 

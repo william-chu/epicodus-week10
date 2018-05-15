@@ -8,8 +8,3 @@
   <input #newMessage type="text" placeholder="Enter a message">
   <button (click)="requestUserKey(); sendMessage(newMessage.value)">Send</button>
 </div>
-
-<!-- <p>{{userKey | async | json}}</p>
-<div *ngFor="let something of userKey | async">
-  <p>{{something | json}}</p>
-</div> -->
