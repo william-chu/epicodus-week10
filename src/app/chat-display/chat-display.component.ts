@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Location } from '@angular/common';
+
 import { AimService } from '../aim.service';
-import { ActivatedRoute, Params } from '@angular/router';
+
 import { FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 
 
@@ -14,16 +14,15 @@ import { FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/d
 })
 
 export class ChatDisplayComponent implements OnInit {
-  userId: string;
+  @Input() userId: string;
   messages: FirebaseListObservable<any[]>;
   buddy;
-  user;
   buddyId;
+  user;
 
-  constructor(private router: Router, private route: ActivatedRoute, private location: Location, private aimService: AimService) { }
+  constructor(private router: Router, private aimService: AimService) { }
 
   ngOnInit() {
-    this.userId = this.route.params['_value']['id'];
     this.messages = this.aimService.getMessagesByUserId(this.userId);
     this.aimService.getBuddyByUserId(this.userId).subscribe(dataLastEmittedFromObserver => {
       this.buddy = dataLastEmittedFromObserver.$value;

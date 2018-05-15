@@ -1,4 +1,12 @@
-<!-- <h1>{{}}</h1> -->
-<div *ngFor="let chat of chatList | async">
-  <button (click)="chatWithBuddy(chat.buddyId)">{{chat.buddy | json}}</button>
+<div class="container">
+  <div class="row">
+    <div class="col-10 chat-display">
+      <app-chat-display [userId]="userId"></app-chat-display>
+    </div>
+    <div class="col-2 buddy-list">
+      <div *ngFor="let chat of chatList | async">
+        <button (click)="chatWithBuddy(chat.buddyId)">{{chat.buddy | json}}</button>
+      </div>
+    </div>
+  </div>
 </div>

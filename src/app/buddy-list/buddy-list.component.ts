@@ -1,7 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AimService } from '../aim.service';
 import { FirebaseListObservable } from 'angularfire2/database';
 import { Router } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-buddy-list',
@@ -10,13 +12,14 @@ import { Router } from '@angular/router';
   providers: [AimService]
 })
 export class BuddyListComponent implements OnInit {
-  @Input() childUserId: string;
   currentRoute: string = this.router.url;
+  userId: string;
   chatList;
-  constructor(private aimService: AimService, private router: Router) { }
+  constructor(private aimService: AimService, private route: ActivatedRoute, private location: Location, private router: Router) { }
 
   ngOnInit() {
-    this.chatList = this.aimService.getBuddiesByUserId(this.childUserId);
+    this.userId = this.route.params['_value']['id'];
+    this.chatList = this.aimService.getBuddiesByUserId(this.userId);
   }
 
   chatWithBuddy(buddyId: string) {

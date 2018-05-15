@@ -17,7 +17,7 @@ export class WelcomeComponent implements OnInit {
   }
 
   setUser(username: string) {
-    this.router.navigate(['chat-display', username]);
+    this.router.navigate(['buddy-list', username]);
   }
 
 }

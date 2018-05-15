@@ -1,7 +1,7 @@
 import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { ChatDisplayComponent } from './chat-display/chat-display.component';
+import { BuddyListComponent } from './buddy-list/buddy-list.component';
 
 const appRoutes: Routes = [
   {
@@ -9,8 +9,8 @@ const appRoutes: Routes = [
 	   component: WelcomeComponent
 	},
   {
-	   path: 'chat-display/:id',
-	   component: ChatDisplayComponent
+	   path: 'buddy-list/:id',
+	   component: BuddyListComponent
 	}
 ];
 
