@@ -10,8 +10,6 @@ import { routing } from './app.routing';
 import { AppComponent } from './app.component';
 import { BuddyListComponent } from './buddy-list/buddy-list.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { ConversationComponent } from './conversation/conversation.component';
-import { ComposeComponent } from './compose/compose.component';
 import { ChatDisplayComponent } from './chat-display/chat-display.component';
 
 export const firebaseConfig = {
@@ -27,8 +25,6 @@ export const firebaseConfig = {
     AppComponent,
     BuddyListComponent,
     WelcomeComponent,
-    ConversationComponent,
-    ComposeComponent,
     ChatDisplayComponent
   ],
   imports: [
