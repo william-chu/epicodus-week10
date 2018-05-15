@@ -39,13 +39,15 @@ export class ChatDisplayComponent implements OnInit {
     this.aimService.getUserById(this.userId).subscribe(dataLastEmittedFromObserver => {
       this.userName = dataLastEmittedFromObserver.$value;
     });
-    // this.aimService.getUserKey(this.userId, this.buddyId).subscribe(dataLastEmittedFromObserver => {
-    //   this.userKey = dataLastEmittedFromObserver.$value;
-    // });
+  }
+
+  requestUserKey(){
+    this.userKey = this.aimService.getUserKey(this.userId, this.buddyId);
   }
 
   sendMessage(newMessage) {
     this.aimService.appendUserChatList(`${this.userName}: ${newMessage}`, this.userId, this.buddyKey);
+    console.log(this.userKey+"insendMessage");
     this.aimService.appendBuddyChatList(`${this.userName}: ${newMessage}`, this.userId, this.buddyId, this.userKey);
   }
 

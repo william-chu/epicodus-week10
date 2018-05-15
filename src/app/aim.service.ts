@@ -11,7 +11,7 @@ export class AimService {
   chatList: FirebaseListObservable<any[]>;
   testMessages;
   testBuddy;
-  userKey;
+
 
 
   constructor(private database: AngularFireDatabase){
@@ -44,17 +44,18 @@ export class AimService {
 
   appendBuddyChatList(newMessage: string, userId: string, buddyId: string, userKey1: string) {
     // let userKey1 = this.getUserKey(userId, buddyId);
-    console.log(userKey1);
-    //this.database.list(`users/${buddyId}/chatList/${userKey}/messages`).push(newMessage);
+    console.log(userKey1+"inAppend");
+    this.database.list(`users/${buddyId}/chatList/${userKey1}/messages`).push(newMessage);
   }
 
   getUserKey(userId: string, buddyId: string) {
+    let userKey;
     var firebase = require('firebase');
-
     var ref = firebase.database().ref(`users/${buddyId}/chatList/`).orderByChild("buddyId").equalTo(userId).on('value', function (snapshot) {
-      this.userKey = Object.keys(snapshot.val())[0];
+      userKey = Object.keys(snapshot.val())[0];
     });
-    return this.userKey;
+    console.log(userKey+"UserKeyinsideGetUserkey");
+    return userKey;
   }
 
 
