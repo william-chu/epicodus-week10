@@ -16,6 +16,7 @@ export class ChatDisplayComponent implements OnInit {
   @Input() userId: string;
   messages: FirebaseListObservable<any[]>;
   currentRoute: string = this.router.url;
+  userKey;
   userName;
   buddyKey: string;
   buddyId: string;
@@ -30,18 +31,22 @@ export class ChatDisplayComponent implements OnInit {
 
     this.aimService.getBuddyByUserId(this.userId, this.buddyKey).subscribe(dataLastEmittedFromObserver => {
       this.buddyName = dataLastEmittedFromObserver.$value;
-    })
+    });
     this.aimService.getBuddyId(this.userId, this.buddyKey).subscribe(dataLastEmittedFromObserver => {
       this.buddyId = dataLastEmittedFromObserver.$value;
-    })
+      this.userKey = this.aimService.getUserKey(this.userId, this.buddyId);
+    });
     this.aimService.getUserById(this.userId).subscribe(dataLastEmittedFromObserver => {
       this.userName = dataLastEmittedFromObserver.$value;
-    })
+    });
+    // this.aimService.getUserKey(this.userId, this.buddyId).subscribe(dataLastEmittedFromObserver => {
+    //   this.userKey = dataLastEmittedFromObserver.$value;
+    // });
   }
 
   sendMessage(newMessage) {
     this.aimService.appendUserChatList(`${this.userName}: ${newMessage}`, this.userId, this.buddyKey);
-    this.aimService.appendBuddyChatList(`${this.userName}: ${newMessage}`, this.buddyId);
+    this.aimService.appendBuddyChatList(`${this.userName}: ${newMessage}`, this.userId, this.buddyId, this.userKey);
   }
 
 }
