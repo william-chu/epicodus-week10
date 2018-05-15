@@ -11,9 +11,8 @@ Angular Instant Messenger (AIM) - A 21st century chat application with a 90s fee
 | MVP Features | Input | Output | Status |
 | --- | --- | --- | --- |
 | User "signs in" | Choose user, click submit | Dynamic page route | Done |
-| User can chat with a buddy | Enter message, click send | Chat dialogue updates | In Progress |
-| User can see chat history with buddy | Open chat window | See chat history | In Progress |
-| User can see buddies | Login | Buddy list | In Progress |
+| User can chat with a buddy and see message history | Enter message, click send | Chat dialogue updates | Done |
+| User can see buddies | Login | Buddy list | Done |
 
 
 | Reasonable Goals | Input | Output | Status |

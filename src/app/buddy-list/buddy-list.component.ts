@@ -20,7 +20,7 @@ export class BuddyListComponent implements OnInit {
   }
 
   chatWithBuddy(buddyId: string) {
-    // this.router.navigate(['chat-display', buddyId]);
+    window.open(`http://localhost:4200/chat-display/${this.childUserId}`, "_blank");
   }
 
 
