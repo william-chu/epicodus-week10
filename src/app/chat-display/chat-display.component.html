@@ -1,5 +1,5 @@
 <div>
-  <p>Conversation with {{(buddy | async)?.$value}}</p>
+  <p>Conversation with {{buddy}}</p>
   <div *ngFor="let message of messages | async">
     <p>{{message.$value | json}}</p>
   </div>

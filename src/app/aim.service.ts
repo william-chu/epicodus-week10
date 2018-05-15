@@ -7,6 +7,7 @@ export class AimService {
   messages: FirebaseListObservable<any[]>;
   buddy: FirebaseObjectObservable<any>;
   user: FirebaseObjectObservable<any>;
+  buddyId;
 
   constructor(private database: AngularFireDatabase){
 
@@ -27,14 +28,25 @@ export class AimService {
     return this.user;
   }
 
-  appendMessage(newMessage: string, userId: string) {
+  getBuddyId(userId: string) {
+    this.buddyId = this.database.object(`users/${userId}/chatList/0/buddyId`);
+    return this.buddyId;
+  }
+
+  appendUserChatList(newMessage: string, userId: string) {
     this.database.list(`users/${userId}/chatList/0/messages`).push(newMessage);
   }
+
 
   //this is for the buddylist to get all the buddies
   getBuddiesByUserId(userId: string) {
     let chatList = this.database.list(`users/${userId}/chatList/`);
     return chatList;
+  }
+
+
+  appendBuddyChatList(newMessage: string, buddyId: string) {
+    this.database.list(`users/${buddyId}/chatList/0/messages`).push(newMessage);
   }
 
 }

@@ -1,10 +1,10 @@
 { "users": [
   {
     "name": "xxKeWLGuRLxx",
-    "chatList": [{"buddy": "Will_I_Am", "messages": ["Will_I_Am: hi", "xxKeWLGuRLxx: sup", "Will_I_Am: whatever", "Will_I_Am: lol"]}]
+    "chatList": [{"buddy": "Will_I_Am", "buddyId": "1", "messages": ["Will_I_Am: hi", "xxKeWLGuRLxx: sup", "Will_I_Am: whatever", "Will_I_Am: lol"]}]
   },
   {
     "name": "Will_I_Am",
-    "chatList": [{"buddy": "xxKeWLGuRLxx", "messages": ["Will_I_Am: hi", "xxKeWLGuRLxx: sup", "Will_I_Am: whatever", "Will_I_Am: lol"]}]
+    "chatList": [{"buddy": "xxKeWLGuRLxx", "buddyId": "0", "messages": ["Will_I_Am: hi", "xxKeWLGuRLxx: sup", "Will_I_Am: whatever", "Will_I_Am: lol"]}]
   }]
 }
