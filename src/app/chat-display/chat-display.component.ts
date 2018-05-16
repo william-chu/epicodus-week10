@@ -71,4 +71,5 @@ export class ChatDisplayComponent implements OnInit {
 
   setVolume() {
     this.volumeLevel = 0.5;  }
+
 }
