@@ -14,7 +14,8 @@ import { FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/d
 
 export class ChatDisplayComponent implements OnInit {
   @Input() userId: string;
-  messages: FirebaseListObservable<any[]>;
+  messages;
+  colorMessages: string[] = [];
   currentRoute: string = this.router.url;
   userKey;
   userName;
@@ -28,17 +29,31 @@ export class ChatDisplayComponent implements OnInit {
   ngOnInit() {
     this.userId = this.route.params['_value']['userId'];
     this.buddyKey = this.route.params['_value']['buddyKey'];
-    this.messages = this.aimService.getMessagesByUserId(this.userId, this.buddyKey);
+    // this.messages = this.aimService.getMessagesByUserId(this.userId, this.buddyKey);
+
+    this.aimService.getUserById(this.userId).subscribe(dataLastEmittedFromObserver => {
+      this.userName = dataLastEmittedFromObserver.$value;
+    });
 
     this.aimService.getBuddyByUserId(this.userId, this.buddyKey).subscribe(dataLastEmittedFromObserver => {
       this.buddyName = dataLastEmittedFromObserver.$value;
     });
+
+    this.aimService.getMessagesByUserId(this.userId, this.buddyKey).subscribe(dataLastEmittedFromObserver => {
+      this.messages = dataLastEmittedFromObserver;
+      for(let i = 0; i < this.messages.length; i++) {
+        // let regUserName = new RegExp('^.*:')
+        if (JSON.stringify(this.messages[i].$value).includes(this.userName) === true) {
+          this.colorMessages.push(this.messages[i].$value.replace(this.userName, "<span class='blue'>" + this.userName + "</span>"))
+        } else if (JSON.stringify(this.messages[i].$value).includes(this.buddyName) === true){
+          this.colorMessages.push(this.messages[i].$value.replace(this.buddyName, "<span class='red'>" + this.buddyName + "</span>"))
+        } else {
+        }
+      }
+    });
     this.aimService.getBuddyId(this.userId, this.buddyKey).subscribe(dataLastEmittedFromObserver => {
       this.buddyId = dataLastEmittedFromObserver.$value;
       this.userKey = this.aimService.getUserKey(this.userId, this.buddyId);
-    });
-    this.aimService.getUserById(this.userId).subscribe(dataLastEmittedFromObserver => {
-      this.userName = dataLastEmittedFromObserver.$value;
     });
 
     // Adds click send functionality if you press enter key https://stackoverflow.com/questions/155188/trigger-a-button-click-with-javascript-on-the-enter-key-in-a-text-box
@@ -49,6 +64,8 @@ export class ChatDisplayComponent implements OnInit {
           document.getElementById("compose-submit").click();
       }
     });
+
+
   }
 
   requestUserKey(){

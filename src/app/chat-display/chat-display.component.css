@@ -57,3 +57,13 @@ button {
 button:hover {
   cursor: pointer;
 }
+
+:host /deep/ .red {
+  font-weight: bold;
+  color: red;
+}
+
+:host /deep/ .blue {
+  font-weight: bold;
+  color: blue;
+}
