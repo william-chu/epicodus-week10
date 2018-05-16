@@ -86,7 +86,7 @@ button {
 }
 
 .nav-link{
-  -webkit-box-shadow: 0 5px 4px -4px #999;
-  -moz-box-shadow: 2 8px 2px -4px #999;
   box-shadow: 0 6px 8px -6px #999;
+  -webkit-box-shadow: 10px 0 5px -2px #888;
+    box-shadow: 10px 0 5px -2px #999;
 }
