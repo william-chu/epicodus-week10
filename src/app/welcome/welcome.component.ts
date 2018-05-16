@@ -17,7 +17,8 @@ export class WelcomeComponent implements OnInit {
   }
 
   setUser(username: string) {
-    this.router.navigate(['buddy-list', username]);
+    // this.router.navigate(['buddy-list', username]);
+    window.open(`http://localhost:4200/buddy-list/${username}`, "Buddy List", "height=600, width=200");
   }
 
 }
