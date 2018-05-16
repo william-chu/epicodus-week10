@@ -18,6 +18,7 @@ export class BuddyListComponent implements OnInit {
   user;
   chatList;
   chatWithBuddies = 0;
+  arrow: string = "▼";
 
   constructor(private aimService: AimService, private route: ActivatedRoute, private location: Location, private router: Router) { }
 
@@ -31,8 +32,16 @@ export class BuddyListComponent implements OnInit {
   }
 
   showBuddies(){
+  if (this.chatWithBuddies === 1){
+    this.chatWithBuddies = 0;
+    this.arrow = "▼";
+  } else if (this.chatWithBuddies === 0){
     this.chatWithBuddies = 1;
+    this.arrow = "►";
   }
+
+  }
+
 
 
 }
