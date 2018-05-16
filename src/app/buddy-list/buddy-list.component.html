@@ -14,7 +14,7 @@
   <img src="https://github.com/william-chu/epicodus-week10/blob/master/src/assets/img/logo.png?raw=true" id="img">
   <br>
   <div class="buddy-list">
-    <p id="buddy-tab" (click)="showBuddies()">▼ Buddies (3/3)</p>
+    <p id="buddy-tab" (click)="showBuddies()">{{arrow}} Buddies (3/3)</p>
     <div class="listOfBuddies">
       <div *ngIf="chatWithBuddies === 1">
         <div *ngFor="let chat of chatList | async">
