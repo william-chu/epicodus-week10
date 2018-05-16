@@ -1,11 +1,22 @@
-<div class="">
-  <select #username>
-    <option disabled autofocus>Select username</option>
-    <option value="0">xxKeWLGuRLxx</option>
-    <option value="1">Will_I_Am</option>
-    <option value="2">RudeChild6</option>
-    <option value="3">Jewlz_72</option>
-  </select>
-  <input type="text" placeholder="password" required>
-  <button (click)="setUser(username.value)">Sign In</button>
+<div class="container-fluid">
+  <div class="login-display">
+    <div class="login-header">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png">
+      <p>Sign On</p>
+    </div>
+    <div class="login-body">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png">
+      <h5>ANGULAR</h5>
+      <h5>INSTANT MESSENGER</h5>
+      <select #username>
+        <option disabled autofocus>Select username</option>
+        <option value="0">xxKeWLGuRLxx</option>
+        <option value="1">Will_I_Am</option>
+        <option value="2">RudeChild6</option>
+        <option value="3">Jewlz_72</option>
+      </select><br>
+      <input type="password" placeholder="password" required><br>
+      <button (click)="setUser(username.value)">Sign In</button>
+    </div>
+  </div>
 </div>

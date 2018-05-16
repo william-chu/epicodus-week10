@@ -1,0 +1,44 @@
+.login-display {
+  display: block;
+  margin: 100px auto 50px;
+  border-left: 2px solid blue;
+  border-right: 2px solid blue;
+  border-top: 2px solid blue;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom: 2px solid blue;
+  background-color: beige;
+  padding-bottom: 50px;
+  height: 450px;
+  width: 400px;
+}
+
+.login-header {
+  background-color: blue;
+  color: white;
+}
+
+.login-header img {
+  float: left;
+  height: 20px;
+  margin: 2px 5px 2px 5px;
+}
+
+.login-body {
+  text-align: center;
+}
+
+.login-body select, .login-body input {
+  margin: 3px;
+  width: 200px;
+}
+
+.login-body button {
+  margin-top: 3px;
+}
+
+.login-body img {
+  display: block;
+  margin: auto;
+  width: 200px;
+}
