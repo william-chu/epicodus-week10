@@ -17,7 +17,7 @@
     <p id="buddy-tab" (click)="seeBuddyList()">▼ Buddies (3/3)</p>
     <div ng-show="visible" class="listOfBuddies">
       <div *ngFor="let chat of chatList | async">
-        <button (click)="chatWithBuddy(chat.$key)">{{chat.buddy | json}}</button>
+        <button (click)="chatWithBuddy(chat.$key)">{{chat.buddy}}</button>
       </div>
     </div>
   </div>
