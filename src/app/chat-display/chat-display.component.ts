@@ -78,7 +78,7 @@ export class ChatDisplayComponent implements OnInit {
   }
 
   checkUser(message) {
-    let testUserName = new RegExp('^' + this.userName)
+    let testUserName = new RegExp(this.userName);
     return testUserName.test(message);
   }
 

@@ -10,19 +10,27 @@ Your browser does not support the audio element.
   <div class="chat-log">
     <!-- https://codepen.io/anon/pen/pdrLEZTo keep content scrolled to bottom, main styles.css contains the css component  -->
     <div>
-      <div *ngFor="let message of colorMessages">
-        <p *ngIf="checkUser(message)" [innerHTML]="message">
+      <div *ngFor="let message of messages">
+        <div *ngIf="checkUser(message.$value)">
           <audio autoplay [volume]="getVolume()">
             <source src="../../assets/imsend.wav" type="audio/mpeg">
-            Your browser does not support the audio element.
-          </audio>
-        </p>
-        <p *ngIf="!checkUser(message)" [innerHTML]="message">
+              Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div *ngIf="!checkUser(message.$value)">
           <audio autoplay [volume]="getVolume()">
             <source src="../../assets/imrcv.wav" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
-        </p>
+        </div>
+      </div>
+      <div *ngFor="let colorMessage of colorMessages">
+        <!-- <div *ngIf="checkUser(message)"> -->
+            <p [innerHTML]="colorMessage"></p>
+        <!-- </div>
+        <div >
+          <p [innerHTML]="colorMessage"></p>
+        </div> -->
       </div>
     </div>
   </div>
