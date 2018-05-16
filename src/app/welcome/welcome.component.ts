@@ -17,7 +17,7 @@ export class WelcomeComponent implements OnInit {
   }
 
   setUser(username: string) {
-    window.open(`${location.origin}/buddy-list/${username}`, "Buddy List", "height=570,width=260,left=1000");
+    window.open(`${location.origin}/buddy-list/${username}`, "Buddy List", "height=580,width=260,left=1000");
   }
 
 }
