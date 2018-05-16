@@ -31,6 +31,7 @@
   min-height: 250px;
   overflow-y: scroll;
   display: flex;
+  word-wrap: break-word;
   flex-direction: column-reverse;
 }
 
