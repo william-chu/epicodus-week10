@@ -21,6 +21,7 @@ export class ChatDisplayComponent implements OnInit {
   buddyKey: string;
   buddyId: string;
   buddyName;
+  volumeLevel: number = 0;
 
   constructor(private aimService: AimService, private route: ActivatedRoute, private location: Location, private router: Router) { }
 
@@ -61,9 +62,13 @@ export class ChatDisplayComponent implements OnInit {
 
   checkUser(message) {
     let testUserName = new RegExp('^' + this.userName)
-    console.log(testUserName);
-    console.log(testUserName.test(message));
     return testUserName.test(message);
-
   }
+
+  getVolume() {
+    return this.volumeLevel;
+  }
+
+  setVolume() {
+    this.volumeLevel = 0.5;  }
 }
