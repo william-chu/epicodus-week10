@@ -1,11 +1,25 @@
-<div class="container">
+<div class="buddyList-display">
+  <div class="buddyList-header">
+    <p>Buddy List</p>
+  </div>
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" href="/buddy-list/0">Online</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link">List Setup</a>
+    </li>
+  </ul>
   <div class="row">
     <div class="col-10 chat-display">
-      <!-- <app-chat-display [userId]="userId"></app-chat-display> -->
+        <!-- <app-chat-display [userId]="userId"></app-chat-display> -->
     </div>
     <div class="col-2 buddy-list">
-      <div *ngFor="let chat of chatList | async">
-        <button (click)="chatWithBuddy(chat.$key)">{{chat.buddy | json}}</button>
+      <p id="buddy-tab" (click)="seeBuddyList()">▼ Buddies (3/3)</p>
+      <div ng-show="visible">
+        <div *ngFor="let chat of chatList | async">
+          <button (click)="chatWithBuddy(chat.$key)">{{chat.buddy | json}}</button>
+        </div>
       </div>
     </div>
   </div>

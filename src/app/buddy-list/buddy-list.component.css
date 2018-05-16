@@ -1,8 +1,45 @@
+.buddyList-display {
+  border-left: 2px solid blue;
+  border-right: 2px solid blue;
+  border-top: 2px solid blue;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom: 2px solid blue;
+  background-color: beige;
+  padding-bottom: 50px;
+}
+
+.buddyList-header {
+  background-color: blue;
+  color: white;
+}
+
 .chat-display {
   margin-top: 25px;
 }
 
 .buddy-list {
   margin-top: 25px;
-  border: 1px solid black;
 }
+
+button:focus {
+  outline: none;
+}
+
+button {
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.buddyList {
+  display: none;
+}
+
+#buddy-tab {
+  background-color: yellow;
+}
+
+/*.buddyList {
+  display: show;
+}*/
