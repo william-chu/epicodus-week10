@@ -3,18 +3,16 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png">
     <p>Conversation with {{buddyName}}</p>
   </div>
-  <div id="chat-log" class="chat-log">
-    <div *ngFor="let message of messages | async">
-      <p>{{message.$value | json}}</p>
-      <script type="text/javascript">
-        let chatLog = document.getElementById("chat-log");
-        //scroll to bottom of chatlog
-        chatLog.scrollTop = chatLog.scrollHeight;
-      </script>
+  <div class="chat-log">
+    <!-- https://codepen.io/anon/pen/pdrLEZTo keep content scrolled to bottom, main styles.css contains the css component  -->
+    <div>
+      <div *ngFor="let message of messages | async">
+        <p>{{message.$value | json}}</p>
+      </div>
     </div>
   </div>
   <div class="compose">
     <input #newMessage type="text" placeholder="Enter a message">
   </div>
-  <button (click)="requestUserKey(); sendMessage(newMessage.value)">Send</button>
+  <button (click)="requestUserKey(); sendMessage(newMessage.value); newMessage.value=''">Send</button>
 </div>
