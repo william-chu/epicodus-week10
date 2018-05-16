@@ -13,24 +13,19 @@ Your browser does not support the audio element.
       <div *ngFor="let message of messages">
         <div *ngIf="checkUser(message.$value)">
           <audio autoplay [volume]="getVolume()">
-            <source src="../../assets/imsend.wav" type="audio/mpeg">
+            <source src="https://raw.githubusercontent.com/william-chu/epicodus-week10/master/src/assets/imsend.wav" type="audio/mpeg">
               Your browser does not support the audio element.
             </audio>
         </div>
         <div *ngIf="!checkUser(message.$value)">
           <audio autoplay [volume]="getVolume()">
-            <source src="../../assets/imrcv.wav" type="audio/mpeg">
+            <source src="https://raw.githubusercontent.com/william-chu/epicodus-week10/master/src/assets/imrcv.wav" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
         </div>
       </div>
       <div *ngFor="let colorMessage of colorMessages">
-        <!-- <div *ngIf="checkUser(message)"> -->
-            <p [innerHTML]="colorMessage"></p>
-        <!-- </div>
-        <div >
-          <p [innerHTML]="colorMessage"></p>
-        </div> -->
+        <p [innerHTML]="colorMessage"></p>
       </div>
     </div>
   </div>

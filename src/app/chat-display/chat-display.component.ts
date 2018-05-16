@@ -41,8 +41,7 @@ export class ChatDisplayComponent implements OnInit {
 
     this.aimService.getMessagesByUserId(this.userId, this.buddyKey).subscribe(dataLastEmittedFromObserver => {
       this.messages = dataLastEmittedFromObserver;
-      for(let i = 0; i < this.messages.length; i++) {
-        // let regUserName = new RegExp('^.*:')
+      for(let i = this.messages.length - 1; i < this.messages.length; i++) {
         if (JSON.stringify(this.messages[i].$value).includes(this.userName) === true) {
           this.colorMessages.push(this.messages[i].$value.replace(this.userName, "<span class='blue'>" + this.userName + "</span>"))
         } else if (JSON.stringify(this.messages[i].$value).includes(this.buddyName) === true){
