@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { UserData } from './models/user-data.model';
-var firebase = require('firebase');
+// var firebase = require('firebase');
+import * as firebase from 'firebase';
 
 @Injectable()
 export class AimService {
