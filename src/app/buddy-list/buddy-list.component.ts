@@ -17,7 +17,7 @@ export class BuddyListComponent implements OnInit {
   userId: string;
   user;
   chatList;
-  b = 0;
+  chatWithBuddies = 0;
 
   constructor(private aimService: AimService, private route: ActivatedRoute, private location: Location, private router: Router) { }
 
@@ -31,7 +31,7 @@ export class BuddyListComponent implements OnInit {
   }
 
   showBuddies(){
-    this.b = 1;
+    this.chatWithBuddies = 1;
   }
 
 
