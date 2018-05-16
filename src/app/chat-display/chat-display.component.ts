@@ -39,6 +39,15 @@ export class ChatDisplayComponent implements OnInit {
     this.aimService.getUserById(this.userId).subscribe(dataLastEmittedFromObserver => {
       this.userName = dataLastEmittedFromObserver.$value;
     });
+
+    // Adds click send functionality if you press enter key https://stackoverflow.com/questions/155188/trigger-a-button-click-with-javascript-on-the-enter-key-in-a-text-box
+    document.getElementById("compose")
+      .addEventListener("keyup", function(event) {
+      event.preventDefault();
+      if (event.keyCode === 13) {
+          document.getElementById("compose-submit").click();
+      }
+    });
   }
 
   requestUserKey(){

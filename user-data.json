@@ -2,22 +2,22 @@
   {
     "name": "xxKeWLGuRLxx",
     "chatList": [
-      {"buddy": "Will_I_Am", "buddyId": "1", "messages": ["Will_I_Am: hi", "xxKeWLGuRLxx: sup", "Will_I_Am: whatever", "Will_I_Am: lol"]},
-      {"buddy": "RudeChild6", "buddyId": "2", "messages": ["RudeChild6: hay gurl", "xxKeWLGuRLxx: hayyyy", "RudeChild6: wyd", "RudeChild6: idk"]},
+      {"buddy": "Will_I_Am", "buddyId": "1", "messages": []},
+      {"buddy": "RudeChild6", "buddyId": "2", "messages": []},
       {"buddy": "Jewlz_72", "buddyId": "3", "messages": []}]
   },
   {
     "name": "Will_I_Am",
     "chatList": [
-      {"buddy": "xxKeWLGuRLxx", "buddyId": "0", "messages": ["Will_I_Am: hi", "xxKeWLGuRLxx: sup", "Will_I_Am: whatever", "Will_I_Am: lol"]},
-      {"buddy": "RudeChild6", "buddyId": "2", "messages": ["Will_I_Am: heyyyyyyy", "RudeChild6: lol hey sup bro", "Will_I_Am: going to the mall", "Will_I_Am: k"]},
+      {"buddy": "xxKeWLGuRLxx", "buddyId": "0", "messages": []},
+      {"buddy": "RudeChild6", "buddyId": "2", "messages": []},
       {"buddy": "Jewlz_72", "buddyId": "3", "messages": []}]
   },
   {
     "name": "RudeChild6",
     "chatList": [
-      {"buddy": "xxKeWLGuRLxx", "buddyId": "0", "messages": ["RudeChild6: hay gurl", "xxKeWLGuRLxx: hayyyy", "RudeChild6: wyd", "RudeChild6: idk"]},
-      {"buddy": "Will_I_Am", "buddyId": "1", "messages": ["Will_I_Am: heyyyyyyy", "RudeChild6: lol hey sup bro", "Will_I_Am: going to the mall", "Will_I_Am: k"]},
+      {"buddy": "xxKeWLGuRLxx", "buddyId": "0", "messages": []},
+      {"buddy": "Will_I_Am", "buddyId": "1", "messages": []},
       {"buddy": "Jewlz_72", "buddyId": "3", "messages": []}]
   },
   {

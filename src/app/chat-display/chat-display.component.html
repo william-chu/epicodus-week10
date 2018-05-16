@@ -2,24 +2,32 @@
   <source src="../../assets/ring.wav" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
-<div>
-  <p>Conversation with {{buddyName}}</p>
-  <div *ngFor="let message of messages | async">
-    <p *ngIf="checkUser(message.$value)">{{message.$value | json}}
-      <audio autoplay>
-        <source src="../../assets/imsend.wav" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
-    </p>
-    <p *ngIf="!checkUser(message.$value)">{{message.$value | json}}
-      <audio autoplay>
-        <source src="../../assets/imrcv.wav" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
-    </p>
+<div class="chat-display">
+  <div class="chat-header">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png">
+    <p>Conversation with {{buddyName}}</p>
   </div>
-</div>
-<div>
-  <input #newMessage type="text" placeholder="Enter a message">
-  <button (click)="requestUserKey(); sendMessage(newMessage.value)">Send</button>
+  <div class="chat-log">
+    <!-- https://codepen.io/anon/pen/pdrLEZTo keep content scrolled to bottom, main styles.css contains the css component  -->
+    <div>
+      <div *ngFor="let message of messages | async">
+        <p *ngIf="checkUser(message.$value)">{{message.$value | json}}
+          <audio autoplay>
+            <source src="../../assets/imsend.wav" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </p>
+        <p *ngIf="!checkUser(message.$value)">{{message.$value | json}}
+          <audio autoplay>
+            <source src="../../assets/imrcv.wav" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="compose">
+    <input id="compose" #newMessage type="text" placeholder="Enter a message">
+  </div>
+  <button id="compose-submit" (click)="requestUserKey(); sendMessage(newMessage.value); newMessage.value=''">Send</button>
 </div>

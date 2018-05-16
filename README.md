@@ -1,4 +1,4 @@
-# Aim
+# AIM - Angular Instant Messenger
 
 #### By William Chu, Matt Miller, Brea Borlas, Julia Sheremet
 
