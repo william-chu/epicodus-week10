@@ -12,7 +12,7 @@
     </div>
   </div>
   <div class="compose">
-    <input #newMessage type="text" placeholder="Enter a message">
+    <input id="compose" #newMessage type="text" placeholder="Enter a message">
   </div>
-  <button (click)="requestUserKey(); sendMessage(newMessage.value); newMessage.value=''">Send</button>
+  <button id="compose-submit" (click)="requestUserKey(); sendMessage(newMessage.value); newMessage.value=''">Send</button>
 </div>
