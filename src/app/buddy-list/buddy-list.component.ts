@@ -33,7 +33,7 @@ export class BuddyListComponent implements OnInit {
   }
 
   chatWithBuddy(buddyId: string) {
-    window.open(`${location.origin}/chat-display/${this.userId}/${buddyId}`, "chat", "height=300, width=300");
+    window.open(`${location.origin}/chat-display/${this.userId}/${buddyId}`,"chat", "resizable=0,height=422,width=635");
   }
 
   // seeBuddyList(listOfBuddies: buddies){
