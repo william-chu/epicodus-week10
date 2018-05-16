@@ -1,10 +1,20 @@
-<div>
-  <p>Conversation with {{buddyName}}</p>
-  <div *ngFor="let message of messages | async">
-    <p>{{message.$value | json}}</p>
+<div class="chat-display">
+  <div class="chat-header">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png">
+    <p>Conversation with {{buddyName}}</p>
   </div>
-</div>
-<div>
-  <input #newMessage type="text" placeholder="Enter a message">
+  <div id="chat-log" class="chat-log">
+    <div *ngFor="let message of messages | async">
+      <p>{{message.$value | json}}</p>
+      <script type="text/javascript">
+        let chatLog = document.getElementById("chat-log");
+        //scroll to bottom of chatlog
+        chatLog.scrollTop = chatLog.scrollHeight;
+      </script>
+    </div>
+  </div>
+  <div class="compose">
+    <input #newMessage type="text" placeholder="Enter a message">
+  </div>
   <button (click)="requestUserKey(); sendMessage(newMessage.value)">Send</button>
 </div>
