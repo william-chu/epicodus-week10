@@ -1,8 +1,67 @@
-.chat-display {
-  margin-top: 25px;
+.buddyList-display {
+  border-left: 2px solid blue;
+  border-right: 2px solid blue;
+  border-top: 2px solid blue;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom: 2px solid blue;
+  background-color: beige;
+  padding-bottom: 50px;
+}
+
+.buddyList-header {
+  background-color: blue;
+  color: white;
+}
+
+.buddyList-header img {
+  float: left;
+  height: 20px;
+  margin: 2px 5px 2px 5px;
 }
 
 .buddy-list {
   margin-top: 25px;
-  border: 1px solid black;
 }
+
+button:focus {
+  outline: none;
+}
+
+button {
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+#buddy-tab {
+  background-color: yellow;
+}
+
+#buddy-tab:hover {
+  cursor: pointer;
+}
+
+#img {
+  padding-top: 10px;
+  margin: auto;
+  display: block;
+  max-height:150px;
+  max-width: auto;
+}
+
+.nav-tabs {
+  font-size: 12px;
+}
+
+.listOfBuddies {
+  padding-left: 5px;
+}
+
+.listOfBuddies button:hover {
+  cursor: pointer;
+}
+
+/*.buddyList {
+  display: none;
+}*/
