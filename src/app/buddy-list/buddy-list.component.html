@@ -11,14 +11,23 @@
       <a class="nav-link">List Setup</a>
     </li>
   </ul>
-  <img src="assets/img/logo.png" id="img">
+  <img src="https://github.com/william-chu/epicodus-week10/blob/master/src/assets/img/logo.png?raw=true" id="img">
   <br>
   <div class="buddy-list">
-    <p id="buddy-tab" (click)="seeBuddyList()">▼ Buddies (3/3)</p>
-    <div ng-show="visible" class="listOfBuddies">
-      <div *ngFor="let chat of chatList | async">
-        <button (click)="chatWithBuddy(chat.$key)">{{chat.buddy}}</button>
+    <p id="buddy-tab" (click)="showBuddies()">▼ Buddies (3/3)</p>
+    <div class="listOfBuddies">
+      <div *ngIf="chatWithBuddies === 1">
+        <div *ngFor="let chat of chatList | async">
+          <button (click)="chatWithBuddy(chat.$key)">{{chat.buddy}}</button><br>
+        </div>
       </div>
     </div>
+    <p>▼ Family (1/4)</p>
+    <p class="contacts">▼ Coworkers (1/30)</p>
+    <p id="offline">▼ Offline (80/83)</p>
+    <p id="offline1">cannister</p>
+    <p id="offline1">KoolSkat3rChix</p>
+    <p id="offline1">BayBoys2</p>
+    <p id="offline1">Rubyrockst@r</p>
   </div>
 </div>
