@@ -12,13 +12,13 @@ Your browser does not support the audio element.
     <div>
       <div *ngFor="let message of messages | async">
         <p *ngIf="checkUser(message.$value)">{{message.$value | json}}
-          <audio autoplay>
+          <audio autoplay [volume]="getVolume()">
             <source src="../../assets/imsend.wav" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
         </p>
         <p *ngIf="!checkUser(message.$value)">{{message.$value | json}}
-          <audio autoplay>
+          <audio autoplay [volume]="getVolume()">
             <source src="../../assets/imrcv.wav" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
@@ -29,5 +29,5 @@ Your browser does not support the audio element.
   <div class="compose">
     <input id="compose" #newMessage type="text" placeholder="Enter a message">
   </div>
-  <button id="compose-submit" (click)="requestUserKey(); sendMessage(newMessage.value); newMessage.value=''">Send</button>
+  <button id="compose-submit" (click)="requestUserKey(); sendMessage(newMessage.value); setVolume(); newMessage.value=''">Send</button>
 </div>
