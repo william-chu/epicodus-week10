@@ -5,14 +5,24 @@ Your browser does not support the audio element.
 <div>
   <p>Conversation with {{buddyName}}</p>
   <div *ngFor="let message of messages | async">
-    <p>{{message.$value | json}}
+    <!-- <p>{{message.$value | json}}
         <audio autoplay>
           <source src="../../assets/imrcv.wav" type="audio/mpeg">
           Your browser does not support the audio element.
         </audio>
+    </p> -->
+    <p *ngIf="checkUser(message.$value)">{{message.$value | json}}
+      <audio autoplay>
+        <source src="../../assets/imsend.wav" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
     </p>
-    <!-- <p ngIf="checkUser(message)">{{message.$value | json}}</p>
-    <p ngIf="!checkUser(message)">{{message.$value | json}}</p> -->
+    <p *ngIf="!checkUser(message.$value)">{{message.$value | json}}
+      <audio autoplay>
+        <source src="../../assets/imrcv.wav" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </p>
   </div>
 </div>
 <div>
