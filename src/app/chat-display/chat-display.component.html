@@ -1,7 +1,18 @@
+<audio id="open-audio">
+  <source src="../../assets/ring.wav" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
 <div>
   <p>Conversation with {{buddyName}}</p>
   <div *ngFor="let message of messages | async">
-    <p>{{message.$value | json}}</p>
+    <p>{{message.$value | json}}
+        <audio autoplay>
+          <source src="../../assets/imrcv.wav" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+    </p>
+    <!-- <p ngIf="checkUser(message)">{{message.$value | json}}</p>
+    <p ngIf="!checkUser(message)">{{message.$value | json}}</p> -->
   </div>
 </div>
 <div>

@@ -39,7 +39,13 @@ export class ChatDisplayComponent implements OnInit {
     this.aimService.getUserById(this.userId).subscribe(dataLastEmittedFromObserver => {
       this.userName = dataLastEmittedFromObserver.$value;
     });
+    window.onload = function() {
+      let audioPlayer = <HTMLVideoElement> document.getElementById("open-audio");
+      audioPlayer.load();
+      audioPlayer.play();
+    }
   }
+
 
   requestUserKey(){
     this.userKey = this.aimService.getUserKey(this.userId, this.buddyId);
@@ -51,4 +57,11 @@ export class ChatDisplayComponent implements OnInit {
     this.aimService.appendBuddyChatList(`${this.userName}: ${newMessage}`, this.userId, this.buddyId, this.userKey);
   }
 
-}
+  // checkUser(message) {
+  //   console.log(message);
+  //   let testUserName = new RegExp('/^"' + this.userName)
+  //   if ([this.userName] === message.match(testUserName)) {
+  //     return true
+  //   }
+  // }
+  }
