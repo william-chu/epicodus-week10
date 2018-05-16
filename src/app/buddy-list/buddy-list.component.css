@@ -6,7 +6,7 @@
   border-top-right-radius: 5px;
   border-bottom: 2px solid blue;
   background-color: beige;
-  height: 570px;
+  height: 590px;
 }
 
 .buddyList-header {
@@ -91,6 +91,7 @@ button {
   -webkit-box-shadow: 4px 0 5px -2px #888;
   box-shadow: 4px 0 5px -2px #999;
 }
+
 #buddy-tab {
   padding-left: 10px;
 }
