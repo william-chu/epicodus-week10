@@ -1,5 +1,6 @@
 <div class="buddyList-display">
   <div class="buddyList-header">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png">
     <p>Buddy List</p>
   </div>
   <ul class="nav nav-tabs">
@@ -10,18 +11,13 @@
       <a class="nav-link">List Setup</a>
     </li>
   </ul>
-  <div class="row">
-    <div class="col-10 chat-display">
-        <!-- <app-chat-display [userId]="userId"></app-chat-display> -->
-    </div>
-    <img src="assets/img/logo.png" id="img">
-    <br>
-    <div class="col-2 buddy-list">
-      <p id="buddy-tab" (click)="seeBuddyList()">▼ Buddies (3/3)</p>
-      <div ng-show="visible">
-        <div *ngFor="let chat of chatList | async">
-          <button (click)="chatWithBuddy(chat.$key)">{{chat.buddy | json}}</button>
-        </div>
+  <img src="assets/img/logo.png" id="img">
+  <br>
+  <div class="buddy-list">
+    <p id="buddy-tab" (click)="seeBuddyList()">▼ Buddies (3/3)</p>
+    <div ng-show="visible" class="listOfBuddies">
+      <div *ngFor="let chat of chatList | async">
+        <button (click)="chatWithBuddy(chat.$key)">{{chat.buddy | json}}</button>
       </div>
     </div>
   </div>

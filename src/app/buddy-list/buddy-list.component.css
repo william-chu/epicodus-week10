@@ -14,12 +14,13 @@
   color: white;
 }
 
-.chat-display {
-  margin-top: 25px;
+.buddyList-header img {
+  float: left;
+  height: 20px;
+  margin: 2px 5px 2px 5px;
 }
 
 .buddy-list {
-
   margin-top: 25px;
 }
 
@@ -35,16 +36,30 @@ button {
 
 #buddy-tab {
   background-color: yellow;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+}
+
+#buddy-tab:hover {
+  cursor: pointer;
 }
 
 #img {
-  margin-left: 160px;
-  position: fixed;
+  padding-top: 10px;
+  margin: auto;
+  display: block;
   max-height:150px;
   max-width: auto;
+}
+
+.nav-tabs {
+  font-size: 12px;
+}
+
+.listOfBuddies {
+  padding-left: 5px;
+}
+
+.listOfBuddies button:hover {
+  cursor: pointer;
 }
 
 /*.buddyList {
