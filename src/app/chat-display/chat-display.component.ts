@@ -47,8 +47,14 @@ export class ChatDisplayComponent implements OnInit {
 
   sendMessage(newMessage) {
     this.aimService.appendUserChatList(`${this.userName}: ${newMessage}`, this.userId, this.buddyKey);
-    console.log(this.userKey+"insendMessage");
     this.aimService.appendBuddyChatList(`${this.userName}: ${newMessage}`, this.userId, this.buddyId, this.userKey);
   }
 
+  checkUser(message) {
+    let testUserName = new RegExp('^' + this.userName)
+    console.log(testUserName);
+    console.log(testUserName.test(message));
+    return testUserName.test(message);
+
+  }
 }
