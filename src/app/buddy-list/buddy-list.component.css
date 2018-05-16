@@ -67,25 +67,30 @@ button {
 #offline {
   opacity: 0.5;
   line-height: .3;
+  padding-left: 10px;
 }
 
 #offline1 {
   margin-left: 17px;
   opacity: 0.5;
-  line-height: .3;
+  padding-left: 10px;
 }
 
-.contacts{
+#contacts{
   margin-top: -14px;
+  padding-left: 10px;
 }
 
 .listOfBuddies {
   margin-top: -15px;
   margin-left: 17px;
-  margin-bottom: 2px;
+  margin-bottom: 5px;
 }
 
 .nav-link {
   -webkit-box-shadow: 4px 0 5px -2px #888;
   box-shadow: 4px 0 5px -2px #999;
+}
+#buddy-tab {
+  padding-left: 10px;
 }
