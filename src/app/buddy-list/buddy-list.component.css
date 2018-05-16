@@ -75,6 +75,10 @@ button {
   line-height: .3;
 }
 
+.contacts{
+  margin-top: -14px;
+}
+
 .listOfBuddies{
   margin-top: -15px;
   margin-left: 17px;
