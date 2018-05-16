@@ -1,0 +1,15 @@
+body {
+  height: 100%;
+}
+
+.background {
+  background: url('https://raw.githubusercontent.com/william-chu/epicodus-week10/master/src/assets/img/background.jpg');
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-attachment: fixed;
+}
