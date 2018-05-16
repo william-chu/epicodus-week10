@@ -39,13 +39,7 @@ export class ChatDisplayComponent implements OnInit {
     this.aimService.getUserById(this.userId).subscribe(dataLastEmittedFromObserver => {
       this.userName = dataLastEmittedFromObserver.$value;
     });
-    window.onload = function() {
-      let audioPlayer = <HTMLVideoElement> document.getElementById("open-audio");
-      audioPlayer.load();
-      audioPlayer.play();
-    }
   }
-
 
   requestUserKey(){
     this.userKey = this.aimService.getUserKey(this.userId, this.buddyId);
