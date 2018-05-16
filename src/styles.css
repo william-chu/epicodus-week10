@@ -1,58 +1,15 @@
-.chat-display {
-  border-left: 2px solid blue;
-  border-right: 2px solid blue;
-  border-top: 2px solid blue;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom: 2px solid blue;
-  background-color: beige;
-  padding-bottom: 50px;
+body {
+  height: 100%;
 }
 
-.chat-header {
-  background-color: blue;
-  color: white;
-}
-
-.chat-header img {
-  float: left;
-  height: 20px;
-  margin: 2px 5px 2px 5px;
-}
-
-.chat-log {
-  background: white;
-  border: 1px solid gray;
-  margin-left: 100px;
-  margin-right: 3px;
-  padding-left: 3px;
-  max-height: 250px;
-  min-height: 250px;
-  overflow-y: scroll;
-  display: flex;
-  flex-direction: column-reverse;
-}
-
-.compose {
-  background: white;
-  border: 1px solid gray;
-  margin-top: 25px;
-  margin-left: 100px;
-  margin-right: 3px;
-  margin-bottom: 3px
-}
-
-input {
-  border: none;
-  width: 100%;
-  padding-left: 3px;
-}
-
-button {
-  float: right;
-  margin-right: 3px;
-}
-
-button:hover {
-  cursor: pointer;
+.background {
+  background: url('https://raw.githubusercontent.com/william-chu/epicodus-week10/master/src/assets/img/background.jpg');
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-attachment: fixed;
 }
