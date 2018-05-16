@@ -14,11 +14,14 @@
   <img src="assets/img/logo.png" id="img">
   <br>
   <div class="buddy-list">
-    <p id="buddy-tab" (click)="seeBuddyList()">▼ Buddies (3/3)</p>
-    <div ng-show="visible" class="listOfBuddies">
-      <div *ngFor="let chat of chatList | async">
-        <button (click)="chatWithBuddy(chat.$key)">{{chat.buddy | json}}</button>
+    <p id="buddy-tab" (click)="showBuddies()">▼ Buddies (3/3)</p>
+    <div class="listOfBuddies">
+      <div *ngIf="b === 1">
+        <div *ngFor="let chat of chatList | async">
+          <button (click)="chatWithBuddy(chat.$key)">{{chat.buddy}}</button><br>
+        </div>
       </div>
+
     </div>
   </div>
 </div>
