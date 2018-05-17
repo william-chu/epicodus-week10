@@ -6,6 +6,10 @@
 
 Angular Instant Messenger (AIM) - A 21st century chat application with a 90s feel.
 
+Click link below to see example hosted on Firebase:<br> https://aim-project-884be.firebaseapp.com/
+
+![Application Screenshot](https://raw.githubusercontent.com/william-chu/epicodus-week10/master/src/assets/live-site.png)
+
 ## User Stories
 
 | MVP Features | Input | Output | Status |
@@ -18,16 +22,16 @@ Angular Instant Messenger (AIM) - A 21st century chat application with a 90s fee
 | Reasonable Goals | Input | Output | Status |
 | --- | --- | --- | --- |
 | User can chat with multiple buddies | Select additional buddy on buddylist | Multiple chat windows | Done |
-| User can see their username and buddy username in respective colors next to each message | Chat message sent | Username is in appropriate color | In Progress |
-| User can authenticate to system | Username and password | Login success | In Progress |
+| User can see their username and buddy username in respective colors next to each message | Chat message sent | Username is in appropriate color | Done |
+| User can authenticate to system | Username and password | Login success | UI Done |
 
 | Reach Goals | Input | Output | Status |
 | --- | --- | --- | --- |
-| User can set away message | Away message set | Buddy sees away message | In Progress |
-| User can hear application sounds | Send message, receive message, buddy signs out | Sound effect | In Progress |
-| User can add avatar and set app theme | Link photo, select theme | UI changes | In Progress |
-| User can create a new account | Sign in with new name | new account with corresponding database entry | In Progress |
-| User can add users to buddylist | New buddy name | new user added to buddylist | In Progress |
+| User can hear application sounds | Send message, receive message, buddy signs out | Sound effect | Done |
+| User can set away message | Away message set | Buddy sees away message | Future |
+| User can add avatar and set app theme | Link photo, select theme | UI changes | Future |
+| User can create a new account | Sign in with new name | new account with corresponding database entry | Future |
+| User can add users to buddylist | New buddy name | new user added to buddylist | Future |
 
 ### Node.js Prerequisites
 * Install Node.js https://nodejs.org/en/
