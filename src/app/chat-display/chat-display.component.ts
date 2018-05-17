@@ -29,7 +29,6 @@ export class ChatDisplayComponent implements OnInit {
   ngOnInit() {
     this.userId = this.route.params['_value']['userId'];
     this.buddyKey = this.route.params['_value']['buddyKey'];
-    // this.messages = this.aimService.getMessagesByUserId(this.userId, this.buddyKey);
 
     this.aimService.getUserById(this.userId).subscribe(dataLastEmittedFromObserver => {
       this.userName = dataLastEmittedFromObserver.$value;
@@ -41,15 +40,13 @@ export class ChatDisplayComponent implements OnInit {
 
     this.aimService.getMessagesByUserId(this.userId, this.buddyKey).subscribe(dataLastEmittedFromObserver => {
       this.messages = dataLastEmittedFromObserver;
-      for(let i = this.messages.length - 1; i < this.messages.length; i++) {
-        if (JSON.stringify(this.messages[i].$value).includes(this.userName) === true) {
-          this.colorMessages.push(this.messages[i].$value.replace(this.userName, "<span class='blue'>" + this.userName + "</span>"))
-        } else if (JSON.stringify(this.messages[i].$value).includes(this.buddyName) === true){
-          this.colorMessages.push(this.messages[i].$value.replace(this.buddyName, "<span class='red'>" + this.buddyName + "</span>"))
-        } else {
-        }
+      if (JSON.stringify(this.messages[this.messages.length - 1].$value).includes(this.userName) === true) {
+        this.colorMessages.push(this.messages[this.messages.length - 1].$value.replace(this.userName, "<span class='blue'>" + this.userName + "</span>"))
+      } else if (JSON.stringify(this.messages[this.messages.length - 1].$value).includes(this.buddyName) === true){
+        this.colorMessages.push(this.messages[this.messages.length - 1].$value.replace(this.buddyName, "<span class='red'>" + this.buddyName + "</span>"))
       }
     });
+
     this.aimService.getBuddyId(this.userId, this.buddyKey).subscribe(dataLastEmittedFromObserver => {
       this.buddyId = dataLastEmittedFromObserver.$value;
       this.userKey = this.aimService.getUserKey(this.userId, this.buddyId);
@@ -63,7 +60,6 @@ export class ChatDisplayComponent implements OnInit {
           document.getElementById("compose-submit").click();
       }
     });
-
 
   }
 
