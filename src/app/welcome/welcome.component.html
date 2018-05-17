@@ -8,7 +8,7 @@
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png">
       <h5>ANGULAR</h5>
       <h5>INSTANT MESSENGER</h5>
-      <select #username>
+      <select #username (change)="usernameSetCheck()">
         <option disabled autofocus>Select username</option>
         <option value="0">xxKeWLGuRLxx</option>
         <option value="1">Will_I_Am</option>
@@ -16,7 +16,9 @@
         <option value="3">Jewlz_72</option>
       </select><br>
       <input type="password" placeholder="password" required><br>
-      <button (click)="setUser(username.value)">Sign In</button>
+      <div *ngIf="usernameSet !== null">
+        <button (click)="setUser(username.value)">Sign In</button>
+      </div>
     </div>
   </div>
 </div>
