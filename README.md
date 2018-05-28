@@ -6,7 +6,7 @@
 
 Angular Instant Messenger (AIM) - A 21st century chat application with a 90s feel.
 
-Click link below to see example hosted on Firebase:<br> https://aim-project-884be.firebaseapp.com/
+Click link below to see example hosted on Firebase:<br> https://aim-project-9657f.firebaseapp.com/
 
 ![Application Screenshot](https://raw.githubusercontent.com/william-chu/epicodus-week10/master/src/assets/live-site.png)
 
